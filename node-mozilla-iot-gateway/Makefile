@@ -34,8 +34,8 @@ define Package/node-mozilla-iot-gateway
   CATEGORY:=Languages
   TITLE:=WebThings Gateway by Mozilla
   URL:=https://iot.mozilla.org/gateway/
-  DEPENDS:= +libpthread +node +node-npm +python +python3-light +python3-pip +openssl-util +mozilla-iot-gateway-webapp
-  DEPENDS+= +MOIT_enable-plugin-support:git-http
+  DEPENDS:= +libpthread +node +node-npm +python +python3-light +python3-pip +openssl-util
+  DEPENDS+= +MOIT_enable-plugin-support:git-http +python3-nnpy
   MENU:=1
 endef
 

@@ -32,7 +32,7 @@ define Package/libnanomsg
 	CATEGORY:=Libraries
 	TITLE:=Nanomsg high-performance scalability protocol
 	URL:=http://nanomsg.org/
-	DEPENDS:=+libssp +librt +libpthread
+	DEPENDS:=+librt +libpthread
 endef
 
 define Package/libnanomsg/description
@@ -40,14 +40,16 @@ define Package/libnanomsg/description
 	scalable, and easy to use. Implemented in C, it works on a wide range of operating systems with no further dependencies.
 endef
 
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/libnanomsg.so*  $(1)/usr/lib/
+endef
 
 define Package/libnanomsg/install
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_BUILD_DIR)/.libs/libnanomsg.so*  $(1)/usr/lib/
+	$(CP) $(PKG_BUILD_DIR)/libnanomsg.so*  $(1)/usr/lib/
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(CP) $(PKG_BUILD_DIR)/nanocat  $(1)/usr/bin/
-	$(INSTALL_DIR) $(1)/usr/sbin
-	$(CP) $(PKG_BUILD_DIR)/tcpmuxd  $(1)/usr/sbin/
 endef
 
 $(eval $(call BuildPackage,libnanomsg))
