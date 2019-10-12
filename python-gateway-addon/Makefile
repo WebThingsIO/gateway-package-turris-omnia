@@ -31,7 +31,8 @@ define Package/python3-gateway-addon
   DEPENDS:= \
 		+PACKAGE_python3-gateway-addon:python3-light \
 		+PACKAGE_python3-gateway-addon:python3-jsonschema \
-		+PACKAGE_python3-gateway-addon:python3-nnpy
+		+PACKAGE_python3-gateway-addon:python3-nnpy \
+		+PACKAGE_python3-gateway-addon:python3-singleton-decorator
   VARIANT:=python3
 endef
 
